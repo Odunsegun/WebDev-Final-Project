@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooms</title>
+    <link th:href="@{/style.css}" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Rooms Management</h1>
+        <!-- Navigation links -->
+        <nav>
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/bookings}">Bookings</a>
+            <a th:href="@{/rustomers}">Customers</a>
+            <a th:href="@{/rooms}">Rooms</a>
+            <a th:href="@{/services}">Services</a>
+        </nav>
+    </header>
+
+    <section id="list-rooms">
+        <h2>Available Rooms</h2>
+    </section>
+
+    <section id="add-update-room">
+        <h2>Add/Update Room</h2>
+        <form th:action="@{/rooms/save}" th:method="post">
+            <label for="roomNumber">Room Number:</label>
+            <input type="text" id="roomNumber" name="roomNumber" required>
+            <button type="submit">Save Room</button>
+        </form>
+    </section>

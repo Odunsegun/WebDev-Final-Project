@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Services</title>
+    <link th:href="@{/style.css}" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Services Management</h1>
+        <!-- Navigation links -->
+        <nav>
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/bookings}">Bookings</a>
+            <a th:href="@{/rustomers}">Customers</a>
+            <a th:href="@{/rooms}">Rooms</a>
+            <a th:href="@{/services}">Services</a>
+        </nav>
+    </header>
+
+    <section id="list-services">
+        <h2>List of Services</h2>
+    </section>
+
+    <section id="add-update-service">
+        <h2>Add/Update Service</h2>
+        <form th:action="@{/services/save}" th:method="post">
+            <label for="serviceName">Service Name:</label>
+            <input type="text" id="serviceName" name="serviceName" required>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+            <button type="submit">Save Service</button>
+        </form>
+    </section>

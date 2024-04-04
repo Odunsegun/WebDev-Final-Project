@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link th:href="@{/style.css}" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Customer Management</h1>
+        <!-- Navigation links -->
+        <nav>
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/bookings}">Bookings</a>
+            <a th:href="@{/rustomers}">Customers</a>
+            <a th:href="@{/rooms}">Rooms</a>
+            <a th:href="@{/services}">Services</a>
+        </nav>
+    </header>
+
+    <section id="list-customers">
+        <h2>List of Customers</h2>
+    </section>
+
+    <section id="add-update-customer">
+        <h2>Add/Update Customer</h2>
+        <form th:action="@{/customers/save}" th:method="post">
+            <label for="customerName">Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+            <button type="submit">Save Customer</button>
+        </form>
+    </section>
