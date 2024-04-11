@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings</title>
+    <link th:href="@{/style.css}" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Bookings</h1>
+        <!-- Navigation links -->
+        <nav>
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/bookings}">Bookings</a>
+            <a th:href="@{/rustomers}">Customers</a>
+            <a th:href="@{/rooms}">Rooms</a>
+            <a th:href="@{/services}">Services</a>
+        </nav>
+    </header>
+
+    <section id="list-bookings">
+        <h2>Current Bookings</h2>
+    </section>
+
+    <section id="add-booking">
+        <h2>Add a Booking</h2>
+        <form th:action="@{/bookings/add}" th:method="post">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+            <button type="submit">Add Booking</button>
+        </form>
+    </section>
